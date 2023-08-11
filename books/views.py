@@ -16,7 +16,7 @@ class BookViewSet(viewsets.ModelViewSet):
     serializer_class = BookSerializer
 
     def get_permissions(self):
-        if self.action in ['update', 'partial_update']:
+        if self.action in ['update', 'partial_update','destroy']:
             permission_classes = [IsEditorOrReadOnly]
         elif self.action in ['list', 'retrieve']:
             permission_classes = [IsViewer]
